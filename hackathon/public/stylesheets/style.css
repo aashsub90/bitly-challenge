@@ -1,0 +1,29 @@
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+.alertcss{
+position: fixed;
+  top: 60%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+body {
+    background-image: url('https://nerdsonearth.com/wp-content/uploads/2015/06/Ninja-and-Red-Moon-Wallpaper-PC.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.feeds {
+margin-top: 60px;
+}
