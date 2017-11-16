@@ -1,7 +1,7 @@
 var express = require('express');
 var Request=require('request');
 var router = express.Router();
-var _id=1234;
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,17 +9,47 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/shortlink', function(req, response, next) {
-_id=_id+1;
+
 var url = req.body.url;
-Request.post('http://localhost:3000/short/'+_id+'/'+url, function (error, res, body) {
+//----------------------
+
+var headers = {
+    'User-Agent':       'Super Agent/0.0.1',
+    'Content-Type':     'application/x-www-form-urlencoded'
+}
+
+// Configure the request
+var options = {
+    url: 'http://18.216.252.208:3000/short',
+    method: 'POST',
+    headers: headers,
+    form: {'longURL': url}
+}
+
+// Start the request
+Request(options, function (error, resp, body) {
+     if (error) {
+                throw error;
+            }
+            
+            var data = JSON.parse(body);
+
+            response.render('shortgen', { title: 'Ninja Hackathon cmpe281',link:JSON.stringify(data.shortUrl)});
+})
+
+
+
+//----------------------
+
+/*Request.post('http://18.216.252.208:3000/short/'+url, function (error, res, body) {
  	           if (error) {
                 throw error;
             }
- 
+            
             var data = JSON.parse(body);
 
-            response.render('shortgen', { title: 'Ninja Hackathon cmpe281',link:JSON.stringify(data)});
-});
+            response.render('shortgen', { title: 'Ninja Hackathon cmpe281',link:JSON.stringify(data.shortUrl)});
+});*/
 });
 
 router.get('/mosthits', function(req, response, next) {
