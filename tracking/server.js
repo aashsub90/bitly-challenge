@@ -5,7 +5,7 @@ var app=express();
 
 var MongoClient = require('mongodb').MongoClient
 			, assert = require('assert');
-var murl = "mongodb://18.220.211.62/hackathon";
+var murl = "mongodb://18.216.104.16/hackathon";
 
 app.use(function(req, res, next) {
  res.header("Access-Control-Allow-Origin", "*");
