@@ -1,0 +1,44 @@
+front end
+
+
+takes original url from ui when user clicks generate.
+increment the counter for id by one and pass the id and original url to write service
+
+Write service takes id and converts it to hash small url and sends it back to UI in response. It  takes id , short url and original url and write it to mongodb instance.
+
+in UI short URL is displayed
+
+----------------------------------------------------
+
+Now user takes this URL and ping it... it is the redirecting service.. it takes the appended short url.. converts it to find id.. uses that id to retrive original URL and incerement a count by 1 ... and in response it redirects the user to original URL.
+
+in redirect server change the ip of mongo instance .... 
+
+data schema
+{
+"_id":12345.
+"shortURL":"/dnh",
+"originalURL":"https://www.google.com/",
+"count":8
+}
+
+----------------------------------------------------
+
+Now a service to show most hits.. when user clicks a button on UI.. the service is called .. the services fatches top 3 tranding by connectiing to the mongodb and sends it as a response. UI shows it.
+change the ip of the tracking service inside the front end /mosthits
+
+
+ when up the tracking server change the mongoservice ip
+
+
+ -----------------------------------------------------
+
+When running the services
+
+up the localhost 
+get into each of the redirect service, tracking service and up the nodejs
+change the mongo ip in each of the services
+
+change the ip of tracking service and storage service in the front end
+
+

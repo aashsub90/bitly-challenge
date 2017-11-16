@@ -1,0 +1,17 @@
+<div class="feeds list-group">
+  <a class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Most Hits</h5>
+  </a>
+  {{# each products}}
+
+<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <p class="mb-1">Original URL:{{originalURL}}</p>
+    <p class="mb-1">Short URL:https://18.216.105.86:3000/{{id}}</p>
+      <p class="mb-1">count:{{count}}</p>
+    </div>
+  </a>
+
+{{/each}}
+</div>
