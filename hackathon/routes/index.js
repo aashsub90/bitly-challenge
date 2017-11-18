@@ -20,7 +20,9 @@ var headers = {
 
 // Configure the request
 var options = {
-    url: 'http://18.216.252.208:3000/short',
+    //url: 'http://18.216.252.208:3000/short',
+    //url: 'http://52.15.187.20:3000/short',
+    url: 'http://18.221.61.154:3000/short',  //aws control-panel service
     method: 'POST',
     headers: headers,
     form: {'longURL': url}
@@ -31,7 +33,7 @@ Request(options, function (error, resp, body) {
      if (error) {
                 throw error;
             }
-            
+
             var data = JSON.parse(body);
 
             response.render('shortgen', { title: 'Ninja Hackathon cmpe281',link:JSON.stringify(data.shortUrl)});
@@ -45,7 +47,7 @@ Request(options, function (error, resp, body) {
  	           if (error) {
                 throw error;
             }
-            
+
             var data = JSON.parse(body);
 
             response.render('shortgen', { title: 'Ninja Hackathon cmpe281',link:JSON.stringify(data.shortUrl)});
@@ -53,7 +55,9 @@ Request(options, function (error, resp, body) {
 });
 
 router.get('/mosthits', function(req, response, next) {
-Request.get('http://18.217.26.104:3000/mosthits', function (error, res, body) {
+//Request.get('http://18.217.26.104:3000/mosthits', function (error, res, body) {
+//tracking server.
+Request.get('http://18.217.29.143:3000/mosthits', function (error, res, body) {
  	           if (error) {
                 throw error;
             }
