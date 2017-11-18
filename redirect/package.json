@@ -12,6 +12,8 @@
   "dependencies": {
     "express": "^4.16.2",
     "http": "0.0.0",
-    "mongodb": "^2.2.33"
+    "mongodb": "^2.2.33",
+    "redis": "^2.8.0",
+    "superagent": "^3.8.1"
   }
 }
