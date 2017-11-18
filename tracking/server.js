@@ -3,7 +3,7 @@ var url = require('url');
 var express=require("express");
 var app=express();
 var redis = require('redis');
-var client = redis.createClient("6379", "172.17.0.2");
+var client = redis.createClient("6379", "18.221.204.219");
 client.on('connect', function() {
     console.log('connected');
 });
