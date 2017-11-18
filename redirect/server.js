@@ -4,12 +4,12 @@ var express=require("express");
 var app=express();
 const request = require('superagent');
 const redis = require('redis');
-const redisCon = redis.createClient(6379, 'redisDB');
+const redisCon = redis.createClient("6379", "18.221.204.219");
 
 var MongoClient = require('mongodb').MongoClient
 			, assert = require('assert');
-//var murl = "mongodb://18.216.104.16/hackathon";
-var murl = "mongodb://172.17.0.2:27017/hackathon";
+var murl = "mongodb://18.216.121.230/hackathon";
+//var murl = "mongodb://172.17.0.2:27017/hackathon";
 
 app.use(function(req, res, next) {
  res.header("Access-Control-Allow-Origin", "*");
@@ -67,6 +67,6 @@ function cache(request, response, next){
 			//logic to get URL and increment count by 1
 
 
-app.listen(5000);
+app.listen(3000);
 
-console.log('Redirection server started on: 5000' );
+console.log('Redirection server started on: 3000' );
